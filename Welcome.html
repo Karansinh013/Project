@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body{
+    background-color: #a1f2ee;
+    text-align: center;
+    }
+
+
+
+    a {
+    color: #f1f9f9;
+    }
+    .card {
+    background-color:#8a8a8a;
+
+    }
+    .card-title{
+    font-weight: bold;
+    }
+
+    .text{
+    font-size: xx-large;
+    font-style: italic;
+    }
+    a {
+    color: #f1f9f9;
+    }
+    .container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+    }
+    img {
+    max-width: 100%
+  }
+  .image {
+    flex-basis: 40%
+  }
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+
+h1{
+    text-align: center;
+    color : rgb(11, 11, 11);
+}
+h2{
+    text-align: center;
+
+}
+p {
+    font-size: 20px;
+}
+
+body {
+background-color:cadetblue;
+text-align: center;
+
+}
+.footer {
+  width: 100%;
+  background-color: black;
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.footer .col h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 17px;
+  padding: 10px 0;
+  color:red;
+  text-transform: uppercase;
+}
+.footer .col ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .col ul li {
+  color: white;
+  font-size: 12px;
+  padding: 5px 0px;
+}
+.address ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  cursor: pointer;
+  color: lightgray;
+  font-weight: bold;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .address {
+    width: 1000px;
+    display: block;
+  }
+  .address h2 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h2 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h2 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .flip-box {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-box-inner {
+        position: relative;
+        width: 300%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-box:hover .flip-box-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-box-front, .flip-box-back {
+        position: absolute;
+        width: 200%;
+        height: 300%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-box-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-box-back {
+        background-color: #555;
+        color: white;
+        transform: rotateY(180deg);
+      }
+        .navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+      </style>
+
+</head>
+<style>
+body {
+  background-image: url({{url_for('static',filename ='builtin/10.jpg')}});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    background-position: center;
+
+}
+</style>
+   <div class navbar>    <!-- As a heading -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><b>SKYPRICE INSIGHTS</b></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">HOME <span class="sr-only"></span></a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/details">DETAILS</a>
+
+</li>
+
+
+
+    </ul>
+  </div>
+</nav></div>
+    <br><br><br>
+
+        <br>
+
+    <center>
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+
+            <img src="{{url_for('static',filename ='6.png')}}" style="width:600px;height:300px">
+          </div>
+          <div class="flip-box-back">
+            <br><br>
+            <h2><b>SKYPRICE INSIGHTS</b></h2>
+            <br>
+            <h3>Predicted Flight Ticket Price is RS {{prediction}}</h3>
+              <br>
+
+
+          </div>
+        </div>
+      </div></center>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+        <br><br><br>
+
+
+     <div class="vh-50 d-flex justify-content-center align-items-center">
+        <div class="col-md-3.5">
+            <div class="border border-3 border-success"></div>
+            <div class="card  bg-white shadow p-5">
+                <div class="mb-4 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="75" height="75"
+                        fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <h1>Thank You !</h1>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+
+
+
+
+    <br><br><br><br>
+
+
+
+    <footer>
+      <div class="footer">
+        <div class="contain">
+        <div class="col">
+          <h2><b>About Company</h2></b>
+          <ul>
+            <li>About us</li>
+            <li> Our Mission</li>
+            <li>Services</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2><b>Products</h2></b>
+          <ul>
+            <li>Flight Price Predictor</li>
+            <li>Content Development</li>
+            <li>Digital Marketing</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2><b>Team</h2></b>
+          <ul>
+            <li>HR Team</li>
+            <li>Web Development Team</li>
+            <li>ML Developer Team</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2><b>Resources</h2></b>
+          <ul>
+            <li>Webmail</li>
+            <li>Web templates</li>
+            <li>Email templates</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2><b>Contact</h2></b>
+          <ul>
+            <li>+91 9051 983475</li>
+            <li>Nitish@gmail.com</li>
+            <li>Karan@gmail.com</li>
+          </ul>
+        </div>
+        <div class="col address">
+          <h2><b>Address </h2></b>
+          <ul>
+            <li>Rajiv Gandhi Park, Infosys Road, Hinjewadi, Pune.</li>
+        </ul>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+      </div>
+      </footer>
+
+
+
+
+</body>
+</html>

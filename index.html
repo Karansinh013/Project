@@ -1,0 +1,574 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flight Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+
+    <style>
+        body {
+
+  background-image: url({{url_for('static',filename ='builtin/10.jpg')}});
+  background-position: center;
+  background-size: cover;
+}
+
+
+a {
+    color: #f1f9f9;
+
+}
+.card {
+    background-color:white;
+    border-radius: 20px;
+
+
+}
+.card-title{
+    font-weight: bold   ;
+}
+
+.text{
+  font-size: xx-large;
+  font-style: italic;
+}
+a {
+  color: #f1f9f9;
+
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  img {
+    max-width: 100%
+  }
+  .image {
+    flex-basis: 40%
+  }
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+
+h1{
+    text-align: center;
+    color : rgb(11, 11, 11);
+}
+h2{
+    text-align: center;
+
+}
+p {
+    font-size: 20px;
+}
+
+body {
+background-color:cadetblue;
+text-align: center;
+
+}
+.footer {
+  width: 100%;
+  background-color: black;
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.footer .col h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 17px;
+  padding: 10px 0;
+  color:red;
+  text-transform: uppercase;
+}
+.footer .col ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .col ul li {
+  color: white;
+  font-size: 12px;
+  padding: 5px 0px;
+}
+.address ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  cursor: pointer;
+  color: lightgray;
+  font-weight: bold;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .address {
+    width: 1000px;
+    display: block;
+  }
+  .address h2 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h2 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h2 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
+        .navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+        .topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .navbar a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .navbar input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class navbar>    <!-- As a heading -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><b>SKYPRICE INSIGHTS</b></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">HOME <span class="sr-only"></span></a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/details">DETAILS</a>
+
+</li>
+
+
+
+    </ul>
+  </div>
+</nav></div>
+
+
+    <br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                   <div class="card">
+                       <div class="card-body">
+                           <!-- Source -->
+                           <h5  class="card-title">Airline</h5>
+                           <input type="number" name="airline" id="airline" required="required">
+                           <select name="airline" id="airline" required="required">
+                               <option value="0">0 for Air India</option>
+                               <option value="1">1 for AirAsia</option>
+                               <option value="2">2 for Go First</option>
+                               <option value="3">3 for Indigo</option>
+                               <option value="4">4 for Spiceget</option>
+                               <option value="5">5 for StarAir</option>
+                               <option value="6">6 for Trujet</option>
+                               <option value="7">7 for Vistara</option>
+                           </select>
+                       </div>
+                   </div>
+               </div>
+               <br>
+               <br>
+
+               <div class="col-sm-6">
+                <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Category</h5>
+                                <!-- Total Stops -->
+                            <input type="number" name="Category" id="Category" required="required">
+                                <select name="Category" required="required">
+                                    <option value="0">0 for Economy</option>
+                                    <option value="1">1 for Business</option>
+                                </select>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+
+
+
+           <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Source City</h5>
+                        <!-- Destination -->
+                         <input type="number" name="from" id="from" required="required">
+                        <select name="from" id="from" required="required">
+                            <option value="0">0 for Banglore</option>
+                            <option value="1">1 for Chennai</option>
+                            <option value="2">2 for Delhi</option>
+                            <option value="3">3 for Hyderabad</option>
+                            <option value="4">4 for Kolkata</option>
+                            <option value="5">5 for Mumbai</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Destination City</h5>
+                        <!-- Destination -->
+                        <input type="number" name="to" id="to" required="required">
+                        <select name="to" id="to" required="required">
+                            <option value="0">0 for Banglore</option>
+                            <option value="1">1 for Chennai</option>
+                            <option value="2">2 for Delhi</option>
+                            <option value="3">3 for Hyderabad</option>
+                            <option value="4">4 for Kolkata</option>
+                            <option value="5">5 for Mumbai</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Day</h5>
+                            <!-- Departure -->
+                            <input type="number" name="day" id="day" required="required">
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+        <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Month</h5>
+                        <!-- Destination -->
+                        <input type="number" name="month" id="month" required="required">
+
+                        <select name="month" id="month" required="required">
+                            <option value="0">0 for February</option>
+                            <option value="1">1 for March</option> </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+
+           <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Departure Time</h5>
+                                <!-- Airline -->
+                                <input type="number" name="dep_period" id="dep_period" required="required">
+
+                                <select name="dep_period" id="dep_period" required="required">
+                                    <option value="0">0 for Afternoon</option>
+                                    <option value="1">1 for Early Mornig</option>
+                                    <option value="2">2 for Morning</option>
+                                    <option value="3">3 for Night </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Arrival Time</h5>
+                            <!-- Airline -->
+                            <input type="number" name="arr_period" id="arr_period" required="required">
+
+                            <select name="arr_period" id="arr_period" required="required">
+                                <option value="0">0 for Afternoon</option>
+                                <option value="1">1 for Early Mornig</option>
+                                <option value="2">2 for Morning</option>
+                                <option value="3">3 for Night </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Days Left</h5>
+                            <!-- Departure -->
+                           <input type="number" name="Days_left" id="Days_left" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Duration</h5>
+                            <!-- Arrival -->
+                            <input type="number" name="Duration" id="Duration" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Stop(s)</h5>
+                                <!-- Total Stops -->
+                                <input type="number" name="Stops_category" id="Stops_category" required="required">
+                               <select name="Stops_category" required="required">-->
+                                    <option value="0">0 for 1-Stop</option>-->
+                                    <option value="1">1 for Multiple-Stops</option>-->
+                                    <option value="2">2 for Non-stop</option>-->
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Algorithm</h5>
+                                <!-- Total Stops -->
+                                <select name="Algo" required="Algo">
+                                    <option value="lr">Logistic Regression</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <br>
+            <br>
+            <br>
+
+
+
+            <!-- Submit -->
+            <div class="mb-3">
+
+            <center><button class="btn btn-success btn-lg"><b>Predict</b></button></center>
+            </div>
+
+            <br>
+
+            <center><input class="btn btn-primary btn-lg" type="reset" value="Reset"></center>
+
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+          <div class="contain">
+          <div class="col">
+            <h2><b>About Company</b></h2>
+            <ul>
+              <li>About us</li>
+              <li> Our Mission</li>
+              <li>Services</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2><b>Products</b></h2>
+            <ul>
+              <li>Flight Price Predictor</li>
+              <li>Content Development</li>
+              <li>Digital Marketing</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2><b>Team</b></h2>
+            <ul>
+              <li>HR Team</li>
+              <li>Web Development Team</li>
+              <li>ML Developer Team</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2><b>Resources</b></h2>
+            <ul>
+              <li>Webmail</li>
+              <li>Web templates</li>
+              <li>Email templates</li>
+            </ul>
+          </div>
+          <div class="col">
+        <h2><b>Contact</b></h2>
+            <ul>
+              <li>+91 9051 983475</li>
+              <li>nitish@gmail.com</li>
+              <li>Karan@gmail.com</li>
+            </ul>
+          </div>
+          <div class="col address">
+            <h2><b>Address </b></h2>
+            <ul>
+              <li>Rajiv Gandhi Park, Infosys Road, Hinjewadi, Pune.</li>
+          </ul>
+          </div>
+        <div class="clearfix"></div>
+        </div>
+        </div>
+        </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
